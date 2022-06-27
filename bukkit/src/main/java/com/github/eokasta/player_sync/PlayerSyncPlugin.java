@@ -97,17 +97,17 @@ public class PlayerSyncPlugin extends JavaPlugin {
             if (properties == null)
                 return SyncResponse.NO_PROPERTIES;
 
-            final ItemStack[] inventory = EncodeItem.decodeItems(properties.inventory());
+            final ItemStack[] inventory = EncodeItem.decodeItems(properties.getInventory());
             player.getInventory().setContents(inventory); // apply inventory
-            player.setGameMode(properties.gameMode()); // apply game mode
-            player.setHealth(properties.health()); // apply health
-            player.getAttribute(Attribute.GENERIC_MAX_HEALTH).setBaseValue(properties.maxHealth()); // apply max health
-            player.setExp(properties.exp()); // apply exp
-            player.setTotalExperience(properties.totalExp()); // apply total exp
-            player.setLevel(properties.level()); // apply level
-            player.setFoodLevel(properties.food()); // apply food
-            player.setExhaustion(properties.exhaustion()); // apply exhaustion
-            player.setSaturation(properties.saturation()); // apply saturation
+            player.setGameMode(properties.getGameMode()); // apply game mode
+            player.setHealth(properties.getHealth()); // apply health
+            player.getAttribute(Attribute.GENERIC_MAX_HEALTH).setBaseValue(properties.getMaxHealth()); // apply max health
+            player.setExp(properties.getExp()); // apply exp
+            player.setTotalExperience(properties.getTotalExp()); // apply total exp
+            player.setLevel(properties.getLevel()); // apply level
+            player.setFoodLevel(properties.getFood()); // apply food
+            player.setExhaustion(properties.getExhaustion()); // apply exhaustion
+            player.setSaturation(properties.getSaturation()); // apply saturation
             return SyncResponse.SUCCESS;
         } catch (SQLException exception) {
             LOGGER.error("Failed to get properties for player " + playerUniqueId, exception);

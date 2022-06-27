@@ -20,9 +20,18 @@ public class FooListener implements Listener {
     public void onJoin(PlayerJoinEvent event) {
         final Player player = event.getPlayer();
         switch (plugin.applyProperties(player)) {
-            case SUCCESS -> LOGGER.info("Applied properties to player " + player.getName());
-            case FAILURE -> LOGGER.error("Failed to apply properties to player " + player.getName());
-            case NO_PROPERTIES -> LOGGER.info("No properties found for player " + player.getName());
+            case SUCCESS: {
+                LOGGER.info("Applied properties to player " + player.getName());
+                break;
+            }
+            case FAILURE: {
+                LOGGER.error("Failed to apply properties to player " + player.getName());
+                break;
+            }
+            case NO_PROPERTIES: {
+                LOGGER.info("No properties found for player " + player.getName());
+                break;
+            }
         }
     }
 
