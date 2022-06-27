@@ -58,10 +58,4 @@ public class FooListener implements Listener {
         }
     }
 
-//    @Override
-//    public void onPluginMessageReceived(@NotNull String channel, @NotNull Player player, byte[] message) {
-//        if (!channel.equals("player:sync")) return;
-//
-
-//    }
 }
